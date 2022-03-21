@@ -1,9 +1,7 @@
 package cloud.autotests.tests;
 
 import cloud.autotests.helpers.DriverUtils;
-import com.codeborne.selenide.Condition;
 import io.qameta.allure.Description;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Text;
@@ -13,7 +11,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.filter;
 import static com.codeborne.selenide.Selectors.byText;
 
 
@@ -23,23 +20,23 @@ public class GeneratedTests extends TestBase {
     @Description("Test Autorization")
     @DisplayName("Page title should have header text")
     void titleTest() {
-        step("Open url 'https://www.litres.ru/'", () ->
+        step("Открыть url 'https://www.litres.ru/'", () ->
                 open("https://www.litres.ru/"));
 
-        step("choose enter in lk", () ->
+        step("выбор иконки лк", () ->
                 $(".Login-module__loginLink").click());
 
-        step("", () -> $(".Button-module__primary_orange").click());
+        step("выбор ", () -> $(".Button-module__primary_orange").click());
 
-        step("", () -> $(".AuthorizationPopup-module__input").setValue("delkabo@yandex.ru"));
+        step("ввод логина", () -> $(".AuthorizationPopup-module__input").setValue("delkabo@yandex.ru"));
 
-        step("", () -> $(".childContainer-0-2-4").click());
+        step("клик по кнопке", () -> $(".childContainer-0-2-4").click());
 
-        step("", () -> $(".AuthorizationPopup-module__input").setValue("Kam1naLitRes969!"));
+        step("ввод пароля", () -> $(".AuthorizationPopup-module__input").setValue("Kam1naLitRes969!"));
 
-        step("", () -> $(".childContainer-0-2-4").click());
+        step("подтверждение ввода пароля", () -> $(".childContainer-0-2-4").click());
 
-        step("", () ->
+        step("проверка присутствия иконки аватарки", () ->
                 $(".Profile-module__profileLink").shouldHave(visible));
     }
 
@@ -48,33 +45,32 @@ public class GeneratedTests extends TestBase {
         @DisplayName("find book 'Война и Мир'")
         void findBook() {
 
-            step("Open url 'https://www.litres.ru/'", () ->
+            step("Открыть url 'https://www.litres.ru/'", () ->
                     open("https://www.litres.ru/"));
 
-            step("choose enter in lk", () ->
+            step("ввод книги 'Война и Мир' в строку поиска", () ->
                     $(".Search-module__input").setValue("Война и мир").pressEnter());
 
-            step("choose enter in lk", () ->
-                    $(".Search-module__input").setValue("Война и мир").pressEnter());
-
-            $("#search__content").shouldHave(text("Война и мир"));
+            step("проверка нахождения книги 'Война и Мир' в списке", () ->
+                    $("#search__content").shouldHave(text("Война и мир")));
         }
 
     @Test
-    @Description("Find Book")
-    @DisplayName("find book 'Война и Мир'")
+    @Description("Найти раздел Подработки")
+    @DisplayName("Найти раздел Подработки")
     void test1() {
 
-        step("Open url 'https://www.litres.ru/'", () ->
+        step("Открыть url 'https://www.litres.ru/'", () ->
                 open("https://www.litres.ru/"));
 
-        step("choose enter in lk", () ->
+        step("Кликнуть по кнопке 'Жанры'", () ->
                 $(".LowerMenu-module__popoverContentWrapp").click());
 
-        step("choose enter in lk", () ->
+        step("Выбрать из списка 'Подборки'", () ->
                 $$(".MoreMenu-module__text").findBy(text("Подборки")).click());
 
-        $(".grouped__collection").shouldHave(text("Подборки"));
+        step("Найти Название 'Подборки' на странице", () ->
+                $(".grouped__collection").shouldHave(text("Подборки")));
     }
 
     @Test
@@ -82,10 +78,10 @@ public class GeneratedTests extends TestBase {
     @DisplayName("find book 'Война и Мир'")
     void checkPopular() {
 
-        step("Open url 'https://www.litres.ru/'", () ->
+        step("Открыть url 'https://www.litres.ru/'", () ->
                 open("https://www.litres.ru/"));
 
-        step("choose enter in lk", () ->
+        step("Выбрать раздел популярное из списка", () ->
                 $$(".LowerMenu-module__item").findBy(text("Популярное")).click());
 
         step("choose enter in lk", () ->
@@ -97,16 +93,16 @@ public class GeneratedTests extends TestBase {
     @DisplayName("check 'хобби и досуг'")
     void test3() {
 
-        step("Open url 'https://www.litres.ru/'", () ->
+        step("Открыть url 'https://www.litres.ru/'", () ->
                 open("https://www.litres.ru/"));
 
-        step("choose enter in lk", () ->
+        step("Кликнуть по кнопке жанры", () ->
                 $(".LowerMenu-module__genres").click());
 
-        step("choose enter in lk", () ->
+        step("Найти в списке 'Хобби, досуг'", () ->
         $("div[data-header-popup=\"genres\"]").$(byText("Хобби, досуг")).click());
 
-        step("choose enter in lk", () ->
+        step("Проверить название 'Хобби, досуг' на странице", () ->
                 $(".new-container").shouldHave(text("Хобби, досуг")));
     }
 
