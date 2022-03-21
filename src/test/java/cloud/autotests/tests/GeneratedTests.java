@@ -41,8 +41,8 @@ public class GeneratedTests extends TestBase {
     }
 
         @Test
-        @Description("Find Book")
-        @DisplayName("find book 'Война и Мир'")
+        @Description("Найти книгу")
+        @DisplayName("Найти книгу 'Война и Мир'")
         void findBook() {
 
             step("Открыть url 'https://www.litres.ru/'", () ->
@@ -74,8 +74,8 @@ public class GeneratedTests extends TestBase {
     }
 
     @Test
-    @Description("Find Book")
-    @DisplayName("find book 'Война и Мир'")
+    @Description("Проверить раздел")
+    @DisplayName("Найти раздел 'Книжные бестселлеры'")
     void checkPopular() {
 
         step("Открыть url 'https://www.litres.ru/'", () ->
@@ -89,8 +89,8 @@ public class GeneratedTests extends TestBase {
     }
 
     @Test
-    @Description("check 'хобби и досуг'")
-    @DisplayName("check 'хобби и досуг'")
+    @Description("Проверить раздел 'хобби и досуг'")
+    @DisplayName("Проверить раздел 'хобби и досуг'")
     void test3() {
 
         step("Открыть url 'https://www.litres.ru/'", () ->
