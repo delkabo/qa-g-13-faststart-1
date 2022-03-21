@@ -80,7 +80,7 @@ public class GeneratedTests extends TestBase {
     @Test
     @Description("Find Book")
     @DisplayName("find book 'Война и Мир'")
-    void test2() {
+    void checkPopular() {
 
         step("Open url 'https://www.litres.ru/'", () ->
                 open("https://www.litres.ru/"));
@@ -93,8 +93,8 @@ public class GeneratedTests extends TestBase {
     }
 
     @Test
-    @Description("Find Book")
-    @DisplayName("find book 'Война и Мир'")
+    @Description("check 'хобби и досуг'")
+    @DisplayName("check 'хобби и досуг'")
     void test3() {
 
         step("Open url 'https://www.litres.ru/'", () ->
