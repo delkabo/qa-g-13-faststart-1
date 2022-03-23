@@ -16,10 +16,14 @@ import static com.codeborne.selenide.Selectors.byText;
 
 public class GeneratedTests extends TestBase {
 
+
     @Test
     @Description("Тест авторизации")
     @DisplayName("На странице авторизации должен быть div элемент иконки")
     void titleTest() {
+        String myLogin = System.getProperty("myLogin");
+        String myPassword = System.getProperty("password");
+
         step("Открыть url 'https://www.litres.ru/'", () ->
                 open("https://www.litres.ru/"));
 
@@ -28,11 +32,11 @@ public class GeneratedTests extends TestBase {
 
         step("выбор ", () -> $(".Button-module__primary_orange").click());
 
-        step("ввод логина", () -> $(".AuthorizationPopup-module__input").setValue("delkabo@yandex.ru"));
+        step("ввод логина", () -> $(".AuthorizationPopup-module__input").setValue(myLogin));
 
         step("клик по кнопке", () -> $(".childContainer-0-2-4").click());
 
-        step("ввод пароля", () -> $(".AuthorizationPopup-module__input").setValue("Kam1naLitRes969!"));
+        step("ввод пароля", () -> $(".AuthorizationPopup-module__input").setValue(myPassword));
 
         step("подтверждение ввода пароля", () -> $(".childContainer-0-2-4").click());
 
