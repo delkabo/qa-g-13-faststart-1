@@ -1,6 +1,5 @@
 package cloud.autotests.tests;
 
-import cloud.autotests.helpers.DriverUtils;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,11 +18,8 @@ public class GeneratedTests extends TestBase {
     @Description("Тест авторизации")
     @DisplayName("На странице авторизации должен быть div элемент иконки")
     void titleTest() {
-//        String myLogin = System.getProperty("myLogin");
-//        String myPassword = System.getProperty("password");
-
-        String myLogin = "delkabo@yandex.ru";
-        String myPassword = "Kam1naLitRes969!";
+        String myLogin = System.getProperty("myLogin");
+        String myPassword = System.getProperty("password");
 
         step("Открыть url 'https://www.litres.ru/'", () ->
                 open("https://www.litres.ru/"));
