@@ -19,7 +19,7 @@ public class GeneratedTests extends TestBase {
     @DisplayName("На странице авторизации должен быть div элемент иконки")
     void titleTest() {
         String myLogin = System.getProperty("myLogin");
-        String myPassword = System.getProperty("password");
+        String myPassword = System.getProperty("myPassword");
 
         step("Открыть url 'https://www.litres.ru/'", () ->
                 open("https://www.litres.ru/"));
