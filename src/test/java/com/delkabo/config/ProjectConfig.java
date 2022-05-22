@@ -1,4 +1,4 @@
-package cloud.autotests.config;
+package com.delkabo.config;
 
 import org.aeonbits.owner.Config;
 
